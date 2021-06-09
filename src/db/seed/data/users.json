@@ -1,16 +1,10 @@
 [
   {
-    "username": "inz_mamaj",
-    "twitter": "mamaj",
-    "github": "mamaj72",
-    "email": "mamaj@gmail.com",
-    "password": "p@ssword1"
+    "username": "bobsmith",
+    "password": "password123"
   },
   {
-    "username": "hakello89",
-    "twitter": "hakkelo",
-    "github": "hakkelo89",
-    "email": "hakelcam@gmail.com",
-    "password": "p@ssword2"
+    "username": "alicegreen",
+    "password": "password456"
   }
 ]

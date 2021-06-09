@@ -1,23 +1,23 @@
-const seedPosts = require("./post-seeds");
-const seedUsers = require("./user-seeds");
-const seedComments = require("./comment-seeds");
-
+require("dotenv").config();
 const sequelize = require("../../config/connection");
+const { User, Post, Comment } = require("../../models");
+const users = require("./data/users.json");
+const posts = require("./data/posts.json");
+const comments = require("./data/comments.json");
 
-const seedAll = async () => {
+const seed = async () => {
   await sequelize.sync({ force: true });
-  console.log("\n----- DATABASE SYNCED -----\n");
 
-  await seedUsers();
-  console.log("\n----- USERS SEEDED -----\n");
+  await User.bulkCreate(users);
+  console.log("Successfully seeded users");
 
-  await seedPosts();
-  console.log("\n----- POSTS SEEDED -----\n");
+  await Post.bulkCreate(posts);
+  console.log("Successfully seeded posts");
 
-  await seedComments();
-  console.log("\n----- COMMENTS SEEDED -----\n");
+  await Comment.bulkCreate(comments);
+  console.log("Successfully seeded comments");
 
   process.exit(0);
 };
 
-seedAll();
+seed();

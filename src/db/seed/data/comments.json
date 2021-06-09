@@ -1,12 +1,17 @@
 [
   {
+    "message": "MVC is so yesterday!!",
     "user_id": 2,
-    "post_id": 1,
-    "comment_text": "This is amazing!"
+    "post_id": 1
   },
   {
+    "message": "I agree.",
     "user_id": 1,
-    "post_id": 2,
-    "comment_text": "Wow, amazing work!"
+    "post_id": 1
+  },
+  {
+    "message": "I love React now",
+    "user_id": 1,
+    "post_id": 2
   }
 ]
