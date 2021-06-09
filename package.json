@@ -1,0 +1,21 @@
+{
+  "name": "Tech-Blog-Mvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hakkelo89/Tech-Blog-Mvc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hakkelo89/Tech-Blog-Mvc/issues"
+  },
+  "homepage": "https://github.com/Hakkelo89/Tech-Blog-Mvc#readme"
+}
