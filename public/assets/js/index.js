@@ -28,4 +28,10 @@ const handlePostSubmit = () => {
   // on success window location to /dashboard
 };
 
+const handlePostDelete = () => {
+  // DELETE request for post id
+  // /api/posts/{postId}
+  // on success window location to /dashboard
+};
+
 console.log("client-side JS");
