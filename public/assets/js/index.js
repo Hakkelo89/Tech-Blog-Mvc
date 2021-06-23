@@ -4,6 +4,35 @@ const handleSignupSubmit = () => {
   // on success window location to /login
 };
 
+const handleLoginSubmit = async (event) => {
+  event.preventDefault();
+
+  const username = $("#username").val();
+  const password = $("#password").val();
+
+  const requestBody = {
+    username: username,
+    password: password,
+  };
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    body: JSON.stringify(requestBody),
+  };
+
+  const response = await fetch("/auth/login", options);
+
+  if (response.status === 200) {
+    // go to dashboard
+    window.location.replace("/dashboard");
+  } else {
+    console.log("Failed to login");
+  }
+
 const handleLoginSubmit = () => {
   // POST request with username and password
   // /auth/login
@@ -35,3 +64,4 @@ const handlePostDelete = () => {
 };
 
 console.log("client-side JS");
+$("#login-form").submit(handleLoginSubmit);
