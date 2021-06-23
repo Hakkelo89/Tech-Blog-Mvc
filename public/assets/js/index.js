@@ -99,7 +99,28 @@ const handlePostDelete = () => {
   // on success window location to /dashboard
 };
 
+const handleCommentDelete = async (event) => {
+  const { id } = event.currentTarget;
+
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+  };
+
+  const response = await fetch(`/api/comments/${id}`, options);
+
+  if (response.status === 200) {
+    window.location.replace(window.location.pathname);
+  } else {
+    console.log("Failed to delete comment");
+  }
+};
+
 console.log("client-side JS");
 $("#login-form").submit(handleLoginSubmit);
 $("#sign-up-form").submit(handleSignupSubmit);
 $("#logout-btn").click(handleLogoutClick);
+$('[name="delete-comment-btn"]').click(handleCommentDelete);
