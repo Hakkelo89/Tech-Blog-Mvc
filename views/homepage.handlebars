@@ -1,2 +1,6 @@
-<div>Render Navbar here with Home | Login | Signup</div>
+ {{#if isLoggedIn}}
+  {{> privateNavbar}}
+{{else}}
+  {{> publicNavbar}}
+{{/if}}
 <div>Render all the posts here</div>
