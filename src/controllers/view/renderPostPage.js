@@ -20,7 +20,14 @@ const renderPostPage = async (req, res) => {
 
   const post = postFromModel.get({ plain: true });
 
-  res.render("post", post);
+  const comments = post.comments.map((comment) => {
+    return {
+      ...comment,
+      myComment: req.session.userId === comment.user_id,
+    };
+  });
+
+  res.render("post", { ...post, comments });
 };
 
 module.exports = renderPostPage;

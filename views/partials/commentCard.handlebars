@@ -8,4 +8,9 @@
     <p class="text-muted"><small>Updated:
         {{formatDateTime updatedAt}}</small></p>
   </div>
+  {{#if myComment}}
+    <div>
+      <button class="btn btn-danger">Delete</button>
+    </div>
+  {{/if}}
 </div>
