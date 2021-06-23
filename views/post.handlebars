@@ -6,7 +6,7 @@
     <hr />
     <div class="p-4">{{body}}</div>
   </div>
-  <div>Render comment form here</div>
+  <hr />
   <div class="my-4">
     <h2 class="text-center">Comments</h2>
     <ul class="list-group">
@@ -16,5 +16,16 @@
         </li>
       {{/each}}
     </ul>
+  </div>
+  <div>
+    <form name="comment-form" id="{{id}}">
+      <div class="mb-3">
+        <label for="comment" class="form-label">Add your comment here...</label>
+        <textarea class="form-control" id="comment" rows="3"></textarea>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit">Post Comment</button>
+      </div>
+    </form>
   </div>
 </div>

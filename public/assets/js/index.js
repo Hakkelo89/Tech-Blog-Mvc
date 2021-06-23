@@ -81,10 +81,32 @@ const handleLogoutClick = () => {
   // on success window location to /
 };
 
-const handleCommentSubmit = () => {
-  // POST request with comment message
-  // /api/posts/{postId}/comments
-  // on success window location to /posts/{postId}
+const handleCommentSubmit = async (event) => {
+  event.preventDefault();
+
+  const { id } = event.currentTarget;
+  const message = $("#comment").val();
+
+  console.log(id, message);
+
+  const requestBody = { message };
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    body: JSON.stringify(requestBody),
+  };
+
+  const response = await fetch(`/api/posts/${id}/comments`, options);
+
+  if (response.status === 200) {
+    window.location.replace(window.location.pathname);
+  } else {
+    console.log("Failed to post comment");
+  }
 };
 
 const handlePostSubmit = () => {
@@ -124,3 +146,4 @@ $("#login-form").submit(handleLoginSubmit);
 $("#sign-up-form").submit(handleSignupSubmit);
 $("#logout-btn").click(handleLogoutClick);
 $('[name="delete-comment-btn"]').click(handleCommentDelete);
+$('[name="comment-form"]').submit(handleCommentSubmit);
