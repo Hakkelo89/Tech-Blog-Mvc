@@ -1,6 +1,6 @@
 const { Router } = require("express");
 
-const postsRoutes = require("./postRoutes");
+const postsRoutes = require("./postsRoutes");
 const commentsRoutes = require("./commentsRoutes");
 
 const router = Router();

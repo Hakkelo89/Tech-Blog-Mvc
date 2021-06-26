@@ -1,11 +1,7 @@
-const { Comment } = require("../../models");
-
-const handleDeleteComment = async (req, res) => {
-  const { id } = req.params;
-
-  await Comment.destroy({ where: { id } });
-
-  res.status(200).json({ message: "success" });
+const handleDeletePost = (req, res) => {
+  // get id from req params
+  // destroy post
+  res.json("delete post here");
 };
 
-module.exports = handleDeleteComment;
+module.exports = handleDeletePost;

@@ -34,12 +34,15 @@ const handleSignupSubmit = async (event) => {
 
 const handleLoginSubmit = async (event) => {
   event.preventDefault();
+
   const username = $("#username").val();
   const password = $("#password").val();
+
   const requestBody = {
     username: username,
     password: password,
   };
+
   const options = {
     method: "POST",
     headers: {
@@ -48,6 +51,7 @@ const handleLoginSubmit = async (event) => {
     redirect: "follow",
     body: JSON.stringify(requestBody),
   };
+
   const response = await fetch("/auth/login", options);
 
   if (response.status === 200) {
@@ -73,12 +77,6 @@ const handleLogoutClick = async () => {
   } else {
     console.log("Failed to logout");
   }
-};
-
-const handleLogoutClick = () => {
-  // POST request with username and password
-  // /auth/logout
-  // on success window location to /
 };
 
 const handleCommentSubmit = async (event) => {
@@ -109,10 +107,28 @@ const handleCommentSubmit = async (event) => {
   }
 };
 
-const handlePostSubmit = () => {
-  // POST request with title and body
-  // /api/posts
-  // on success window location to /dashboard
+const handlePostSubmit = async (event) => {
+  const title = $("#post-title").val();
+  const body = $("#post-content").val();
+
+  const requestBody = { title, body };
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    body: JSON.stringify(requestBody),
+  };
+
+  const response = await fetch(`/api/posts/`, options);
+
+  if (response.status === 200) {
+    window.location.replace(window.location.pathname);
+  } else {
+    console.log("Failed to creat post");
+  }
 };
 
 const handlePostDelete = () => {
@@ -147,3 +163,4 @@ $("#sign-up-form").submit(handleSignupSubmit);
 $("#logout-btn").click(handleLogoutClick);
 $('[name="delete-comment-btn"]').click(handleCommentDelete);
 $('[name="comment-form"]').submit(handleCommentSubmit);
+$(".new-post-form").submit(handlePostSubmit);

@@ -1,7 +1,7 @@
 const { Router } = require("express");
 
 const handleCommentForPost = require("../../controllers/api/handleCommentForPost");
-const handleCreatePost = require("../../controllers/api/handleCreatPost");
+const handleCreatePost = require("../../controllers/api/handleCreatePost");
 const handleDeletePost = require("../../controllers/api/handleDeletePost");
 
 const router = Router();

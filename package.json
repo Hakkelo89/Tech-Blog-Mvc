@@ -1,7 +1,7 @@
 {
-  "name": "Tech-Blog-Mvc",
+  "name": "tech-blog-mvc",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Your Task",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hakkelo89/Tech-Blog-Mvc.git"
+    "url": "git+https://github.com/surajverma2587/tech-blog-mvc.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hakkelo89/Tech-Blog-Mvc/issues"
+    "url": "https://github.com/surajverma2587/tech-blog-mvc/issues"
   },
-  "homepage": "https://github.com/Hakkelo89/Tech-Blog-Mvc#readme",
+  "homepage": "https://github.com/surajverma2587/tech-blog-mvc#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",

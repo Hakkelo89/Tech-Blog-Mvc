@@ -13,6 +13,7 @@ const helpers = require("./helpers");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+
 const sessionOptions = {
   secret: process.env.SESSION_SECRET,
   resave: false,
@@ -21,10 +22,14 @@ const sessionOptions = {
     db: sequelize,
   }),
 };
+
 const handlebarsOptions = { helpers };
+
 const hbs = handlebars.create(handlebarsOptions);
+
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
+
 app.use(cors());
 app.use(session(sessionOptions));
 app.use(express.json({ extended: true }));
@@ -42,4 +47,5 @@ const init = async () => {
     console.error("Failed to connect to DB");
   }
 };
+
 init();
