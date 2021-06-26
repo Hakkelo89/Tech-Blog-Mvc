@@ -108,27 +108,9 @@ const handleCommentSubmit = async (event) => {
 };
 
 const handlePostSubmit = async (event) => {
-  const title = $("#post-title").val();
-  const body = $("#post-content").val();
-
-  const requestBody = { title, body };
-
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    redirect: "follow",
-    body: JSON.stringify(requestBody),
-  };
-
-  const response = await fetch(`/api/posts/`, options);
-
-  if (response.status === 200) {
-    window.location.replace(window.location.pathname);
-  } else {
-    console.log("Failed to creat post");
-  }
+  // POST request with title and body
+  // /api/posts
+  // on success window location to /dashboard
 };
 
 const handlePostDelete = () => {
