@@ -27,7 +27,11 @@ const renderPostPage = async (req, res) => {
     };
   });
 
-  res.render("post", { ...post, comments });
+  res.render("post", {
+    ...post,
+    comments,
+    myPost: req.session.userId === post.user_id,
+  });
 };
 
 module.exports = renderPostPage;

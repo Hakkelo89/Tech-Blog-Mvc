@@ -12,9 +12,6 @@ const schema = {
   title: {
     type: DataTypes.STRING,
     allowNull: false,
-    validate: {
-      len: [2, 50],
-    },
   },
   body: {
     type: DataTypes.TEXT,
