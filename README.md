@@ -11,7 +11,7 @@ A mysql database and CMS-style Blog built using Model View Controller (MVC) para
   - [Table of Contents](#table-of-contents)
   - [User Story](#user-story)
   - [License](#license)
-  - [Sample Team HTML](#sample-team-html)
+  - [Sample Blog HTML](#sample-blog-html)
   - [Installation Guidelines](#installation-guidelines)
   - [Screenshots](#screenshots)
   - [Contributors](#contributors)
@@ -29,7 +29,7 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
     [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## Sample Team HTML
+## Sample Blog HTML
 
 Please click [here](https://vast-hollows-15179.herokuapp.com/)
 
