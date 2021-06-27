@@ -136,6 +136,37 @@ const handlePostSubmit = async (event) => {
   }
 };
 
+const handlePostUpdateSubmit = async (event) => {
+  event.preventDefault();
+
+  const { id } = event.currentTarget;
+
+  const title = $("#blog-title").val();
+  const body = $("#blog-content").val();
+
+  const requestBody = {
+    title,
+    body,
+  };
+
+  const options = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    body: JSON.stringify(requestBody),
+  };
+
+  const response = await fetch(`/api/posts/${id}`, options);
+
+  if (response.status === 200) {
+    window.location.replace(`/posts/${id}`);
+  } else {
+    console.log("Failed to update post");
+  }
+};
+
 const handlePostDelete = async (event) => {
   const { id } = event.target;
 
@@ -184,3 +215,4 @@ $('[name="delete-comment-btn"]').click(handleCommentDelete);
 $('[name="comment-form"]').submit(handleCommentSubmit);
 $("#create-blog").submit(handlePostSubmit);
 $('[name="delete-post-btn"]').click(handlePostDelete);
+$('form[name="edit-blog"]').submit(handlePostUpdateSubmit);
