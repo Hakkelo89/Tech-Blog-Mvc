@@ -136,10 +136,24 @@ const handlePostSubmit = async (event) => {
   }
 };
 
-const handlePostDelete = () => {
-  // DELETE request for post id
-  // /api/posts/{postId}
-  // on success window location to /dashboard
+const handlePostDelete = async (event) => {
+  const { id } = event.target;
+
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+  };
+
+  const response = await fetch(`/api/posts/${id}`, options);
+
+  if (response.status === 200) {
+    window.location.replace("/dashboard");
+  } else {
+    console.log("Failed to delete post");
+  }
 };
 
 const handleCommentDelete = async (event) => {
@@ -169,3 +183,4 @@ $("#logout-btn").click(handleLogoutClick);
 $('[name="delete-comment-btn"]').click(handleCommentDelete);
 $('[name="comment-form"]').submit(handleCommentSubmit);
 $("#create-blog").submit(handlePostSubmit);
+$('[name="delete-post-btn"]').click(handlePostDelete);
