@@ -136,6 +136,12 @@ const handlePostSubmit = async (event) => {
   }
 };
 
+const handlePostDelete = () => {
+  // DELETE request for post id
+  // /api/posts/{postId}
+  // on success window location to /dashboard
+};
+
 const handleCommentDelete = async (event) => {
   const { id } = event.currentTarget;
 
@@ -162,4 +168,4 @@ $("#sign-up-form").submit(handleSignupSubmit);
 $("#logout-btn").click(handleLogoutClick);
 $('[name="delete-comment-btn"]').click(handleCommentDelete);
 $('[name="comment-form"]').submit(handleCommentSubmit);
-$("#creat-blog").submit(handlePostSubmit);
+$("#create-blog").submit(handlePostSubmit);
